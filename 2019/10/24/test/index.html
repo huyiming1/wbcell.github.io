@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="数据结构,二叉树," />
 
 
 
@@ -79,15 +79,16 @@
 
 
 
+<meta name="description" content="简单二叉树定义二叉树并声明指针别名12345struct Bitree&amp;#123;	char data;	struct Bitree *lchild,*rchild;&amp;#125;;typedef Bitree *tree; 创建二叉树1234567891011121314void CreateBitree (tree &amp;amp;t)  &amp;#123;	char ch;	ch = getchar(">
+<meta name="keywords" content="数据结构,二叉树">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello little huang this is test file">
+<meta property="og:title" content="this is test file">
 <meta property="og:url" content="http:&#x2F;&#x2F;wbcell.github.io&#x2F;2019&#x2F;10&#x2F;24&#x2F;test&#x2F;index.html">
 <meta property="og:site_name" content="WBCell的博客">
+<meta property="og:description" content="简单二叉树定义二叉树并声明指针别名12345struct Bitree&amp;#123;	char data;	struct Bitree *lchild,*rchild;&amp;#125;;typedef Bitree *tree; 创建二叉树1234567891011121314void CreateBitree (tree &amp;amp;t)  &amp;#123;	char ch;	ch = getchar(">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http:&#x2F;&#x2F;wbcell.github.io&#x2F;2019&#x2F;10&#x2F;24&#x2F;test&#x2F;xiaohuang.jpeg">
-<meta property="og:updated_time" content="2019-10-24T13:42:12.717Z">
+<meta property="og:updated_time" content="2019-10-25T10:10:13.063Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;wbcell.github.io&#x2F;2019&#x2F;10&#x2F;24&#x2F;test&#x2F;xiaohuang.jpeg">
 
 
 
@@ -123,7 +124,7 @@
 
 
 
-  <title>Hello little huang this is test file | WBCell的博客</title>
+  <title>this is test file | WBCell的博客</title>
   
 
 
@@ -184,16 +185,6 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             主页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-关于">
-          <a href="/about/%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-about"></i> <br />
-            
-            关于
           </a>
         </li>
       
@@ -311,7 +302,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello little huang this is test file</h1>
+          <h1 class="post-title" itemprop="name headline">this is test file</h1>
         
 
         <div class="post-meta">
@@ -334,6 +325,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%BA%8C%E5%8F%89%E6%A0%91/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构/二叉树</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -344,6 +357,10 @@
 
           
 
+          
+            <span class="post-meta-divider">|</span>
+            <span id="busuanzi_value_page_pv"></span>次阅读
+          
           
 
           
@@ -361,7 +378,16 @@
       
 
       
-        <img src="/2019/10/24/test/xiaohuang.jpeg" class="" title="The beautiful girl">
+        <a id="more"></a>
+
+<h2 id="简单二叉树"><a href="#简单二叉树" class="headerlink" title="简单二叉树"></a>简单二叉树</h2><h3 id="定义二叉树并声明指针别名"><a href="#定义二叉树并声明指针别名" class="headerlink" title="定义二叉树并声明指针别名"></a>定义二叉树并声明指针别名</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">struct Bitree&#123;</span><br><span class="line">	char data;</span><br><span class="line">	struct Bitree *lchild,*rchild;</span><br><span class="line">&#125;;</span><br><span class="line">typedef Bitree *tree;</span><br></pre></td></tr></table></figure>
+<h3 id="创建二叉树"><a href="#创建二叉树" class="headerlink" title="创建二叉树"></a>创建二叉树</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">void CreateBitree (tree &amp;t)  </span><br><span class="line">&#123;</span><br><span class="line">	char ch;</span><br><span class="line">	ch = getchar();</span><br><span class="line">	<span class="keyword">if</span>(ch==<span class="string">' '</span>)</span><br><span class="line">		t = NULL;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		t = new Bitree; </span><br><span class="line">		t-&gt;data = ch;</span><br><span class="line">		CreateBitree(t-&gt;lchild);</span><br><span class="line">		CreateBitree(t-&gt;rchild);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="先序遍历"><a href="#先序遍历" class="headerlink" title="先序遍历"></a>先序遍历</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">void PreOrderTraverse (tree &amp;t)   </span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">if</span>(t)</span><br><span class="line">	&#123;</span><br><span class="line">		cout&lt;&lt;t-&gt;data;</span><br><span class="line">		PreOrderTraverse(t-&gt;lchild);</span><br><span class="line">		PreOrderTraverse(t-&gt;rchild);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">void InOrderTraverse (tree &amp;t)  </span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">if</span>(t)</span><br><span class="line">	&#123;</span><br><span class="line">		InOrderTraverse(t-&gt;lchild);</span><br><span class="line">		cout&lt;&lt;t-&gt;data;</span><br><span class="line">		InOrderTraverse(t-&gt;rchild);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">void PostOrderTraverse (tree &amp;t)   </span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">if</span>(t)</span><br><span class="line">	&#123;</span><br><span class="line">		PostOrderTraverse(t-&gt;lchild);</span><br><span class="line">		PostOrderTraverse(t-&gt;rchild);</span><br><span class="line">		cout&lt;&lt;t-&gt;data;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="层序遍历"><a href="#层序遍历" class="headerlink" title="层序遍历"></a>层序遍历</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">void LevelOrderTraverse (tree &amp;t)  </span><br><span class="line">&#123;</span><br><span class="line">	std::queue&lt;tree&gt; q;</span><br><span class="line">    tree front;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (t == NULL)<span class="built_in">return</span>;</span><br><span class="line"></span><br><span class="line">    q.push(t);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (!q.empty())</span><br><span class="line">    &#123;</span><br><span class="line">        front = q.front();</span><br><span class="line">        q.pop();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (front-&gt;lchild)</span><br><span class="line">            q.push(front-&gt;lchild);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (front-&gt;rchild)</span><br><span class="line">            q.push(front-&gt;rchild);</span><br><span class="line"></span><br><span class="line">        cout&lt;&lt;front-&gt;data;</span><br><span class="line">    &#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
       
     </div>
     
@@ -375,6 +401,14 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag"># 数据结构</a>
+          
+            <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" rel="tag"># 二叉树</a>
+          
+        </div>
       
 
       
@@ -445,8 +479,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -472,7 +515,25 @@
             
 
             
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">categories</span>
+                
+              </div>
+            
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
             
 
           </nav>
@@ -502,6 +563,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简单二叉树"><span class="nav-text">简单二叉树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义二叉树并声明指针别名"><span class="nav-text">定义二叉树并声明指针别名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建二叉树"><span class="nav-text">创建二叉树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#先序遍历"><span class="nav-text">先序遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#中序遍历"><span class="nav-text">中序遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后序遍历"><span class="nav-text">后序遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#层序遍历"><span class="nav-text">层序遍历</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -543,6 +620,17 @@
 
   <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
+
+<div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv" style='display:none'>
+    本站总访问量 <span id="busuanzi_value_site_pv"></span> 次
+    <span class="post-meta-divider">|</span>
+</span>
+<span id="busuanzi_container_site_uv" style='display:none'>
+    有<span id="busuanzi_value_site_uv"></span>人看过我的博客啦
+</span>
+</div>
 
 
 
