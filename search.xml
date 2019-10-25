@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>this is test file</title>
+    <title>test</title>
     <url>/2019/10/24/test/</url>
-    <content><![CDATA[<a id="more"></a>
+    <content><![CDATA[<p>这篇文章包含了简单二叉树的定义以及创建，也包含了二叉树的先序、中序、后序遍历的递归算法，还包含了使用队列对二叉树层序遍历的非递归算法</p>
+<a id="more"></a>
 
 <h2 id="简单二叉树"><a href="#简单二叉树" class="headerlink" title="简单二叉树"></a>简单二叉树</h2><h3 id="定义二叉树并声明指针别名"><a href="#定义二叉树并声明指针别名" class="headerlink" title="定义二叉树并声明指针别名"></a>定义二叉树并声明指针别名</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">struct Bitree&#123;</span><br><span class="line">	char data;</span><br><span class="line">	struct Bitree *lchild,*rchild;</span><br><span class="line">&#125;;</span><br><span class="line">typedef Bitree *tree;</span><br></pre></td></tr></table></figure>
 <h3 id="创建二叉树"><a href="#创建二叉树" class="headerlink" title="创建二叉树"></a>创建二叉树</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">void CreateBitree (tree &amp;t)  </span><br><span class="line">&#123;</span><br><span class="line">	char ch;</span><br><span class="line">	ch = getchar();</span><br><span class="line">	<span class="keyword">if</span>(ch==<span class="string">' '</span>)</span><br><span class="line">		t = NULL;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		t = new Bitree; </span><br><span class="line">		t-&gt;data = ch;</span><br><span class="line">		CreateBitree(t-&gt;lchild);</span><br><span class="line">		CreateBitree(t-&gt;rchild);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -13,16 +14,9 @@
 <h3 id="层序遍历"><a href="#层序遍历" class="headerlink" title="层序遍历"></a>层序遍历</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">void LevelOrderTraverse (tree &amp;t)  </span><br><span class="line">&#123;</span><br><span class="line">	std::queue&lt;tree&gt; q;</span><br><span class="line">    tree front;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (t == NULL)<span class="built_in">return</span>;</span><br><span class="line"></span><br><span class="line">    q.push(t);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (!q.empty())</span><br><span class="line">    &#123;</span><br><span class="line">        front = q.front();</span><br><span class="line">        q.pop();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (front-&gt;lchild)</span><br><span class="line">            q.push(front-&gt;lchild);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (front-&gt;rchild)</span><br><span class="line">            q.push(front-&gt;rchild);</span><br><span class="line"></span><br><span class="line">        cout&lt;&lt;front-&gt;data;</span><br><span class="line">    &#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
-      <categories>
-        <category>数据结构/二叉树</category>
-      </categories>
-      <tags>
-        <tag>数据结构</tag>
-        <tag>二叉树</tag>
-      </tags>
   </entry>
   <entry>
-    <title>Hello little huang</title>
+    <title>Hello world</title>
     <url>/2019/10/24/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
 <a id="more"></a>
