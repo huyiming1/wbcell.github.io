@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>图_邻接表</title>
+    <title>图_十字链表</title>
     <url>/2019/10/30/%E5%9B%BE_%E5%8D%81%E5%AD%97%E9%93%BE%E8%A1%A8/</url>
     <content><![CDATA[<p>这篇文章包含了有向图十字链表的定义以及创建，也包含了邻接表的深度优先遍历、广度优先遍历，十字链表是基于邻接表的一种存储图的一种结构，其方法和邻接表大同小异</p>
 <a id="more"></a>
@@ -52,11 +52,11 @@
 ]]></content>
       <categories>
         <category>数据结构</category>
-        <category>图_邻接表</category>
+        <category>图_十字链表</category>
       </categories>
       <tags>
         <tag>数据结构</tag>
-        <tag>图_邻接表</tag>
+        <tag>图_十字链表</tag>
       </tags>
   </entry>
   <entry>
