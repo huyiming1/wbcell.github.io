@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="WBCell的博客">
 <meta property="og:description" content="这篇文章包含了简单二叉树的定义以及创建，也包含了二叉树的先序、中序、后序遍历的递归算法，还包含了使用队列对二叉树层序遍历的非递归算法">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-26T09:34:02.554Z">
+<meta property="og:updated_time" content="2019-10-26T10:34:35.877Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -348,8 +348,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AE%80%E5%8D%95%E4%BA%8C%E5%8F%89%E6%A0%91/" itemprop="url" rel="index">
-                    <span itemprop="name">简单二叉树</span>
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E4%BA%8C%E5%8F%89%E6%A0%91/" itemprop="url" rel="index">
+                    <span itemprop="name">二叉树</span>
                   </a>
                 </span>
 
@@ -392,11 +392,12 @@
         <p>这篇文章包含了简单二叉树的定义以及创建，也包含了二叉树的先序、中序、后序遍历的递归算法，还包含了使用队列对二叉树层序遍历的非递归算法</p>
 <a id="more"></a>
 
-<h2 id="简单二叉树"><a href="#简单二叉树" class="headerlink" title="简单二叉树"></a>简单二叉树</h2><h3 id="定义二叉树并声明指针别名"><a href="#定义二叉树并声明指针别名" class="headerlink" title="定义二叉树并声明指针别名"></a>定义二叉树并声明指针别名</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">struct Bitree&#123;</span><br><span class="line">	char data;</span><br><span class="line">	struct Bitree *lchild,*rchild;</span><br><span class="line">&#125;;</span><br><span class="line">typedef Bitree *tree;</span><br></pre></td></tr></table></figure>
+<h2 id="简单二叉树初始化"><a href="#简单二叉树初始化" class="headerlink" title="简单二叉树初始化"></a>简单二叉树初始化</h2><h3 id="定义二叉树并声明指针别名"><a href="#定义二叉树并声明指针别名" class="headerlink" title="定义二叉树并声明指针别名"></a>定义二叉树并声明指针别名</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">struct Bitree&#123;</span><br><span class="line">	char data;</span><br><span class="line">	struct Bitree *lchild,*rchild;</span><br><span class="line">&#125;;</span><br><span class="line">typedef Bitree *tree;</span><br></pre></td></tr></table></figure>
 <h3 id="创建二叉树"><a href="#创建二叉树" class="headerlink" title="创建二叉树"></a>创建二叉树</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">void CreateBitree (tree &amp;t)  </span><br><span class="line">&#123;</span><br><span class="line">	char ch;</span><br><span class="line">	ch = getchar();</span><br><span class="line">	<span class="keyword">if</span>(ch==<span class="string">' '</span>)</span><br><span class="line">		t = NULL;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		t = new Bitree; </span><br><span class="line">		t-&gt;data = ch;</span><br><span class="line">		CreateBitree(t-&gt;lchild);</span><br><span class="line">		CreateBitree(t-&gt;rchild);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="先序遍历"><a href="#先序遍历" class="headerlink" title="先序遍历"></a>先序遍历</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">void PreOrderTraverse (tree &amp;t)   </span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">if</span>(t)</span><br><span class="line">	&#123;</span><br><span class="line">		cout&lt;&lt;t-&gt;data;</span><br><span class="line">		PreOrderTraverse(t-&gt;lchild);</span><br><span class="line">		PreOrderTraverse(t-&gt;rchild);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="递归算法"><a href="#递归算法" class="headerlink" title="递归算法"></a>递归算法</h2><h3 id="先序遍历"><a href="#先序遍历" class="headerlink" title="先序遍历"></a>先序遍历</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">void PreOrderTraverse (tree &amp;t)   </span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">if</span>(t)</span><br><span class="line">	&#123;</span><br><span class="line">		cout&lt;&lt;t-&gt;data;</span><br><span class="line">		PreOrderTraverse(t-&gt;lchild);</span><br><span class="line">		PreOrderTraverse(t-&gt;rchild);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">void InOrderTraverse (tree &amp;t)  </span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">if</span>(t)</span><br><span class="line">	&#123;</span><br><span class="line">		InOrderTraverse(t-&gt;lchild);</span><br><span class="line">		cout&lt;&lt;t-&gt;data;</span><br><span class="line">		InOrderTraverse(t-&gt;rchild);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">void PostOrderTraverse (tree &amp;t)   </span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">if</span>(t)</span><br><span class="line">	&#123;</span><br><span class="line">		PostOrderTraverse(t-&gt;lchild);</span><br><span class="line">		PostOrderTraverse(t-&gt;rchild);</span><br><span class="line">		cout&lt;&lt;t-&gt;data;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="非递归算法"><a href="#非递归算法" class="headerlink" title="非递归算法"></a>非递归算法</h2><h3 id="中序遍历-1"><a href="#中序遍历-1" class="headerlink" title="中序遍历"></a>中序遍历</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">void InOrderTraverse(tree &amp;t)</span><br><span class="line">&#123;</span><br><span class="line">	std::stack&lt;tree&gt; s;</span><br><span class="line">	tree p=t;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>(!s.empty()||p)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">while</span>(p) </span><br><span class="line">		&#123;	</span><br><span class="line">			s.push(p);</span><br><span class="line">			p=p-&gt;lchild;</span><br><span class="line">		&#125;	</span><br><span class="line">		<span class="keyword">if</span>(!s.empty())</span><br><span class="line">		&#123;</span><br><span class="line">			p=s.top();</span><br><span class="line">			s.pop();</span><br><span class="line">			cout&lt;&lt;p-&gt;data;</span><br><span class="line">			p=p-&gt;rchild;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; 		</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="层序遍历"><a href="#层序遍历" class="headerlink" title="层序遍历"></a>层序遍历</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">void LevelOrderTraverse (tree &amp;t)  </span><br><span class="line">&#123;</span><br><span class="line">	std::queue&lt;tree&gt; q;</span><br><span class="line">    tree front;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (t == NULL)<span class="built_in">return</span>;</span><br><span class="line"></span><br><span class="line">    q.push(t);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (!q.empty())</span><br><span class="line">    &#123;</span><br><span class="line">        front = q.front();</span><br><span class="line">        q.pop();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (front-&gt;lchild)</span><br><span class="line">            q.push(front-&gt;lchild);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (front-&gt;rchild)</span><br><span class="line">            q.push(front-&gt;rchild);</span><br><span class="line"></span><br><span class="line">        cout&lt;&lt;front-&gt;data;</span><br><span class="line">    &#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
@@ -440,6 +441,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/10/30/%E5%9B%BE_%E9%82%BB%E6%8E%A5%E8%A1%A8/" rel="prev" title="图_邻接表">
+                图_邻接表 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -520,7 +525,7 @@
               
                 <a href="/archives/index.html%7C%7Carchive">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -531,7 +536,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -542,7 +547,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -585,7 +590,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简单二叉树"><span class="nav-text">简单二叉树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义二叉树并声明指针别名"><span class="nav-text">定义二叉树并声明指针别名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建二叉树"><span class="nav-text">创建二叉树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#先序遍历"><span class="nav-text">先序遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#中序遍历"><span class="nav-text">中序遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后序遍历"><span class="nav-text">后序遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#层序遍历"><span class="nav-text">层序遍历</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简单二叉树初始化"><span class="nav-text">简单二叉树初始化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义二叉树并声明指针别名"><span class="nav-text">定义二叉树并声明指针别名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建二叉树"><span class="nav-text">创建二叉树</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#递归算法"><span class="nav-text">递归算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#先序遍历"><span class="nav-text">先序遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#中序遍历"><span class="nav-text">中序遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后序遍历"><span class="nav-text">后序遍历</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#非递归算法"><span class="nav-text">非递归算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#中序遍历-1"><span class="nav-text">中序遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#层序遍历"><span class="nav-text">层序遍历</span></a></li></ol></li></ol></div>
             
 
           </div>

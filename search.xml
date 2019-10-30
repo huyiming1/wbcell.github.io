@@ -1,22 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>图_邻接表</title>
+    <url>/2019/10/30/%E5%9B%BE_%E9%82%BB%E6%8E%A5%E8%A1%A8/</url>
+    <content><![CDATA[<p>这篇文章包含了有向图邻接表的定义以及创建，也包含了邻接表的深度优先遍历、广度优先遍历</p>
+<a id="more"></a>
+
+<h2 id="邻接表初始化"><a href="#邻接表初始化" class="headerlink" title="邻接表初始化"></a>邻接表初始化</h2><h3 id="定义邻接表"><a href="#定义邻接表" class="headerlink" title="定义邻接表"></a>定义邻接表</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">struct ArcNode &#123;</span><br><span class="line">	int adjvex;</span><br><span class="line">	struct ArcNode* nextarc;</span><br><span class="line">	int *info;</span><br><span class="line">&#125;;</span><br><span class="line">struct VNode&#123;</span><br><span class="line">	int data;</span><br><span class="line">	ArcNode *firstarc;</span><br><span class="line">&#125;;</span><br><span class="line">struct ALGraph&#123;</span><br><span class="line">	VNode AdjList[MAX_VERTEX_NUM];</span><br><span class="line">	int vexnum,arcnum;</span><br><span class="line">	int kind;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="邻接表的创建"><a href="#邻接表的创建" class="headerlink" title="邻接表的创建"></a>邻接表的创建</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">int LocatVex(ALGraph &amp;g,int v)</span><br><span class="line">&#123;</span><br><span class="line">	int i;</span><br><span class="line">	<span class="keyword">for</span>(i=0;i&lt;g.vexnum;i++)</span><br><span class="line">		<span class="keyword">if</span>(g.AdjList[i].data==v)</span><br><span class="line">			<span class="built_in">break</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">return</span> i;</span><br><span class="line">&#125;</span><br><span class="line">void CreateALGraph(ALGraph &amp;g)</span><br><span class="line">&#123;</span><br><span class="line">	int vexnum,arcnum,v1,v2,j,k;</span><br><span class="line">	cin&gt;&gt;vexnum&gt;&gt;arcnum;</span><br><span class="line">	g.vexnum = vexnum;</span><br><span class="line">	g.arcnum = arcnum;</span><br><span class="line">	<span class="keyword">for</span>(int i=0;i&lt;vexnum;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		cin&gt;&gt;g.AdjList[i].data;      </span><br><span class="line">		g.AdjList[i].firstarc = NULL;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(int i=0;i&lt;arcnum;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		ArcNode *p;</span><br><span class="line">		p = new ArcNode;</span><br><span class="line">		cin&gt;&gt;v1&gt;&gt;v2;    		//输入弧两端顶点信息 </span><br><span class="line">		j = LocatVex(g,v1);</span><br><span class="line">		k = LocatVex(g,v2);</span><br><span class="line">		p-&gt;adjvex = k;</span><br><span class="line">		p-&gt;nextarc = g.AdjList[j].firstarc;</span><br><span class="line">		g.AdjList[j].firstarc = p;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="遍历算法"><a href="#遍历算法" class="headerlink" title="遍历算法"></a>遍历算法</h2><h3 id="深度优先遍历"><a href="#深度优先遍历" class="headerlink" title="深度优先遍历"></a>深度优先遍历</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bool visited[100];</span><br><span class="line">void DFS (ALGraph &amp;g,int &amp;v)</span><br><span class="line">&#123;</span><br><span class="line">	visited[v] = <span class="literal">true</span>;</span><br><span class="line">	cout&lt;&lt;g.AdjList[v].data;</span><br><span class="line">	ArcNode *p = g.AdjList[v].firstarc;</span><br><span class="line">	<span class="keyword">while</span>(p)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(!visited[p-&gt;adjvex])</span><br><span class="line">			DFS(g,p-&gt;adjvex);</span><br><span class="line">		p = p-&gt;nextarc;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void DFSTraverse(ALGraph &amp;g)</span><br><span class="line">&#123;</span><br><span class="line">	int v;</span><br><span class="line">	<span class="keyword">for</span>(v=0;v&lt;g.vexnum;v++)</span><br><span class="line">		visited[v] = <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">for</span>(v=0;v&lt;g.vexnum;v++)</span><br><span class="line">		<span class="keyword">if</span>(!visited[v])</span><br><span class="line">			DFS(g,v);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="广度优先遍历"><a href="#广度优先遍历" class="headerlink" title="广度优先遍历"></a>广度优先遍历</h3><pre><code class="bash">void BFSTraverse(ALGraph &amp;g)
+{
+    int v=0,HeadQueue,headnum;
+    std::queue&lt;int&gt; q;
+    ArcNode *BFStemp;
+    <span class="keyword">for</span>(int i=0;i&lt;g.vexnum;i++)
+        visited[i] = <span class="literal">false</span>;
+    <span class="keyword">for</span>(v;v&lt;g.vexnum;v++)
+    {
+        <span class="keyword">if</span>(!visited[v])
+        {
+            visited[v] = <span class="literal">true</span>;
+            cout&lt;&lt;g.AdjList[v].data;
+            q.push(g.AdjList[v].data);
+
+            <span class="keyword">while</span>(!q.empty())
+            {
+                HeadQueue = q.front();
+                q.pop();
+                <span class="keyword">for</span>(int i=0;i&lt;g.arcnum;i++)
+                {
+                    <span class="keyword">if</span>(g.AdjList[i].data == HeadQueue)
+                        headnum = i;
+                }
+                BFStemp = g.AdjList[headnum].firstarc;
+                <span class="keyword">while</span>(BFStemp)
+                {
+                    <span class="keyword">if</span>(!visited[BFStemp-&gt;adjvex])
+                    {
+                        visited[BFStemp-&gt;adjvex] = <span class="literal">true</span>;
+                        cout&lt;&lt;g.AdjList[BFStemp-&gt;adjvex].data;
+                        q.push(g.AdjList[BFStemp-&gt;adjvex].data);
+                    }
+                    BFStemp = BFStemp-&gt;nextarc;
+                }
+
+            }
+        }
+    }
+}</code></pre>
+]]></content>
+      <categories>
+        <category>数据结构</category>
+        <category>图_邻接表</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+        <tag>图_邻接表</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>简单二叉树</title>
     <url>/2019/10/24/%E7%AE%80%E5%8D%95%E4%BA%8C%E5%8F%89%E6%A0%91/</url>
     <content><![CDATA[<p>这篇文章包含了简单二叉树的定义以及创建，也包含了二叉树的先序、中序、后序遍历的递归算法，还包含了使用队列对二叉树层序遍历的非递归算法</p>
 <a id="more"></a>
 
-<h2 id="简单二叉树"><a href="#简单二叉树" class="headerlink" title="简单二叉树"></a>简单二叉树</h2><h3 id="定义二叉树并声明指针别名"><a href="#定义二叉树并声明指针别名" class="headerlink" title="定义二叉树并声明指针别名"></a>定义二叉树并声明指针别名</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">struct Bitree&#123;</span><br><span class="line">	char data;</span><br><span class="line">	struct Bitree *lchild,*rchild;</span><br><span class="line">&#125;;</span><br><span class="line">typedef Bitree *tree;</span><br></pre></td></tr></table></figure>
+<h2 id="简单二叉树初始化"><a href="#简单二叉树初始化" class="headerlink" title="简单二叉树初始化"></a>简单二叉树初始化</h2><h3 id="定义二叉树并声明指针别名"><a href="#定义二叉树并声明指针别名" class="headerlink" title="定义二叉树并声明指针别名"></a>定义二叉树并声明指针别名</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">struct Bitree&#123;</span><br><span class="line">	char data;</span><br><span class="line">	struct Bitree *lchild,*rchild;</span><br><span class="line">&#125;;</span><br><span class="line">typedef Bitree *tree;</span><br></pre></td></tr></table></figure>
 <h3 id="创建二叉树"><a href="#创建二叉树" class="headerlink" title="创建二叉树"></a>创建二叉树</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">void CreateBitree (tree &amp;t)  </span><br><span class="line">&#123;</span><br><span class="line">	char ch;</span><br><span class="line">	ch = getchar();</span><br><span class="line">	<span class="keyword">if</span>(ch==<span class="string">' '</span>)</span><br><span class="line">		t = NULL;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		t = new Bitree; </span><br><span class="line">		t-&gt;data = ch;</span><br><span class="line">		CreateBitree(t-&gt;lchild);</span><br><span class="line">		CreateBitree(t-&gt;rchild);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="先序遍历"><a href="#先序遍历" class="headerlink" title="先序遍历"></a>先序遍历</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">void PreOrderTraverse (tree &amp;t)   </span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">if</span>(t)</span><br><span class="line">	&#123;</span><br><span class="line">		cout&lt;&lt;t-&gt;data;</span><br><span class="line">		PreOrderTraverse(t-&gt;lchild);</span><br><span class="line">		PreOrderTraverse(t-&gt;rchild);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="递归算法"><a href="#递归算法" class="headerlink" title="递归算法"></a>递归算法</h2><h3 id="先序遍历"><a href="#先序遍历" class="headerlink" title="先序遍历"></a>先序遍历</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">void PreOrderTraverse (tree &amp;t)   </span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">if</span>(t)</span><br><span class="line">	&#123;</span><br><span class="line">		cout&lt;&lt;t-&gt;data;</span><br><span class="line">		PreOrderTraverse(t-&gt;lchild);</span><br><span class="line">		PreOrderTraverse(t-&gt;rchild);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">void InOrderTraverse (tree &amp;t)  </span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">if</span>(t)</span><br><span class="line">	&#123;</span><br><span class="line">		InOrderTraverse(t-&gt;lchild);</span><br><span class="line">		cout&lt;&lt;t-&gt;data;</span><br><span class="line">		InOrderTraverse(t-&gt;rchild);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">void PostOrderTraverse (tree &amp;t)   </span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">if</span>(t)</span><br><span class="line">	&#123;</span><br><span class="line">		PostOrderTraverse(t-&gt;lchild);</span><br><span class="line">		PostOrderTraverse(t-&gt;rchild);</span><br><span class="line">		cout&lt;&lt;t-&gt;data;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="非递归算法"><a href="#非递归算法" class="headerlink" title="非递归算法"></a>非递归算法</h2><h3 id="中序遍历-1"><a href="#中序遍历-1" class="headerlink" title="中序遍历"></a>中序遍历</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">void InOrderTraverse(tree &amp;t)</span><br><span class="line">&#123;</span><br><span class="line">	std::stack&lt;tree&gt; s;</span><br><span class="line">	tree p=t;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>(!s.empty()||p)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">while</span>(p) </span><br><span class="line">		&#123;	</span><br><span class="line">			s.push(p);</span><br><span class="line">			p=p-&gt;lchild;</span><br><span class="line">		&#125;	</span><br><span class="line">		<span class="keyword">if</span>(!s.empty())</span><br><span class="line">		&#123;</span><br><span class="line">			p=s.top();</span><br><span class="line">			s.pop();</span><br><span class="line">			cout&lt;&lt;p-&gt;data;</span><br><span class="line">			p=p-&gt;rchild;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; 		</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="层序遍历"><a href="#层序遍历" class="headerlink" title="层序遍历"></a>层序遍历</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">void LevelOrderTraverse (tree &amp;t)  </span><br><span class="line">&#123;</span><br><span class="line">	std::queue&lt;tree&gt; q;</span><br><span class="line">    tree front;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (t == NULL)<span class="built_in">return</span>;</span><br><span class="line"></span><br><span class="line">    q.push(t);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (!q.empty())</span><br><span class="line">    &#123;</span><br><span class="line">        front = q.front();</span><br><span class="line">        q.pop();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (front-&gt;lchild)</span><br><span class="line">            q.push(front-&gt;lchild);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (front-&gt;rchild)</span><br><span class="line">            q.push(front-&gt;rchild);</span><br><span class="line"></span><br><span class="line">        cout&lt;&lt;front-&gt;data;</span><br><span class="line">    &#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <categories>
         <category>数据结构</category>
-        <category>简单二叉树</category>
+        <category>二叉树</category>
       </categories>
       <tags>
         <tag>数据结构</tag>
