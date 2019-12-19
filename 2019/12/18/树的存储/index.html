@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="数据结构,树,哈夫曼树," />
 
 
 
@@ -79,13 +79,15 @@
 
 
 
-<meta name="description" content="爱学习的白细胞">
-<meta property="og:type" content="website">
-<meta property="og:title" content="WBCell的博客">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;archives&#x2F;index.html">
+<meta name="description" content="这篇文章包含了简单树的多种存储方式，以及哈夫曼树和求哈夫曼编码的算法">
+<meta name="keywords" content="数据结构,树,哈夫曼树">
+<meta property="og:type" content="article">
+<meta property="og:title" content="树的存储">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;18&#x2F;%E6%A0%91%E7%9A%84%E5%AD%98%E5%82%A8&#x2F;index.html">
 <meta property="og:site_name" content="WBCell的博客">
-<meta property="og:description" content="爱学习的白细胞">
+<meta property="og:description" content="这篇文章包含了简单树的多种存储方式，以及哈夫曼树和求哈夫曼编码的算法">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-12-19T12:21:44.198Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -116,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/12/18/树的存储/"/>
 
 
 
 
 
-  <title>Archive | WBCell的博客</title>
+  <title>树的存储 | WBCell的博客</title>
   
 
 
@@ -141,7 +143,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -269,222 +271,205 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/18/%E6%A0%91%E7%9A%84%E5%AD%98%E5%82%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="白细胞">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar_WBCell.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WBCell的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">树的存储</h1>
         
+
+        <div class="post-meta">
+           
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-18T20:41:14+08:00">
+                2019-12-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        Um..! 5 posts in total. Keep on posting.
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构</span>
+                  </a>
+                </span>
 
-      
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91/" itemprop="url" rel="index">
+                    <span itemprop="name">树</span>
+                  </a>
+                </span>
 
-        
-        
-        
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91/%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91/" itemprop="url" rel="index">
+                    <span itemprop="name">哈夫曼树</span>
+                  </a>
+                </span>
 
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
 
-        
+          
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/12/18/%E6%A0%91%E7%9A%84%E5%AD%98%E5%82%A8/" itemprop="url">
-              
-                <span itemprop="name">树的存储</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-12-18T20:41:14+08:00"
-              content="2019-12-18" >
-          12-18
-        </time>
-      </div>
+          
+            <span class="post-meta-divider">|</span>
+            <span id="busuanzi_value_page_pv"></span>次阅读
+          
+          
 
-    </header>
-  </article>
+          
 
+        </div>
+      </header>
+    
 
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/10/30/%E5%9B%BE_%E5%8D%81%E5%AD%97%E9%93%BE%E8%A1%A8/" itemprop="url">
-              
-                <span itemprop="name">图_十字链表</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-10-30T15:40:14+08:00"
-              content="2019-10-30" >
-          10-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/10/30/%E5%9B%BE_%E9%82%BB%E6%8E%A5%E8%A1%A8/" itemprop="url">
-              
-                <span itemprop="name">图_邻接表</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-10-30T15:27:55+08:00"
-              content="2019-10-30" >
-          10-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/10/24/%E7%AE%80%E5%8D%95%E4%BA%8C%E5%8F%89%E6%A0%91/" itemprop="url">
-              
-                <span itemprop="name">简单二叉树</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-10-24T20:50:44+08:00"
-              content="2019-10-24" >
-          10-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+        <p>这篇文章包含了简单树的多种存储方式，以及哈夫曼树和求哈夫曼编码的算法</p>
+<a id="more"></a>
+<h2 id="简单树的存储方式"><a href="#简单树的存储方式" class="headerlink" title="简单树的存储方式"></a>简单树的存储方式</h2><h3 id="定义树的双亲表存储方式"><a href="#定义树的双亲表存储方式" class="headerlink" title="定义树的双亲表存储方式"></a>定义树的双亲表存储方式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">typedef struct PTNode&#123;  //节点结构</span><br><span class="line">  TElemType data;</span><br><span class="line">  int parent;         //双亲的位置域</span><br><span class="line">&#125;PTNode;</span><br><span class="line">typedef struct &#123;       //树结构</span><br><span class="line">  PTNode nodes[MAX_TREE_SIZE];</span><br><span class="line">  int r,n;          //根的位置和节点数</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="定义树的孩子链表存储方式"><a href="#定义树的孩子链表存储方式" class="headerlink" title="定义树的孩子链表存储方式"></a>定义树的孩子链表存储方式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">typedef struct CTNode &#123;     //孩子节点</span><br><span class="line">  int  child;</span><br><span class="line">  struct CTNode *next;</span><br><span class="line">&#125; *ChildPtr;</span><br><span class="line">typedef struct &#123;</span><br><span class="line">  TElemType data;</span><br><span class="line">  childPtr firstchild;  //孩子链表头指针</span><br><span class="line">&#125;CTBox;</span><br><span class="line">typedef struct&#123;</span><br><span class="line">  CTBox nodes[MAX_TREE_SIZE];</span><br><span class="line">  int n,r;              //节点数和根的位置</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="定义树的孩子兄弟表示法"><a href="#定义树的孩子兄弟表示法" class="headerlink" title="定义树的孩子兄弟表示法"></a>定义树的孩子兄弟表示法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">typedef struct CSNode &#123;</span><br><span class="line">  ElemPype data;</span><br><span class="line">  struct CSNode *firstchild, *nextchild;</span><br><span class="line">&#125;CSNode, *CSTree;</span><br></pre></td></tr></table></figure>
+<h2 id="哈夫曼树"><a href="#哈夫曼树" class="headerlink" title="哈夫曼树"></a>哈夫曼树</h2><h3 id="哈夫曼树的存储结构"><a href="#哈夫曼树的存储结构" class="headerlink" title="哈夫曼树的存储结构"></a>哈夫曼树的存储结构</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">typedef struct &#123;</span><br><span class="line">  unsigned int weight;</span><br><span class="line">  unsigned int parent,lchild,rchild;</span><br><span class="line"></span><br><span class="line">&#125;HTNode, *HuffmanTree;        //动态分配数组存储哈夫曼树</span><br><span class="line">typedef char * * HuffmanCode; //动态分配数组存储哈夫曼编码表</span><br></pre></td></tr></table></figure>
+<h3 id="求哈夫曼编码的算法"><a href="#求哈夫曼编码的算法" class="headerlink" title="求哈夫曼编码的算法"></a>求哈夫曼编码的算法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line">void Selet(HuffmanTree &amp;HT,int n,int *s1,int *s2)  </span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">for</span>(int i=1;i&lt;=n;i++)</span><br><span class="line">		<span class="keyword">if</span>(HT[i].parent == 0)</span><br><span class="line">		&#123;</span><br><span class="line">			*s1 = i; <span class="built_in">break</span>;</span><br><span class="line">		&#125;	</span><br><span class="line">	<span class="keyword">for</span>(int i=1;i&lt;=n;i++)</span><br><span class="line">		<span class="keyword">if</span>(HT[i].parent == 0)</span><br><span class="line">			<span class="keyword">if</span>(HT[*s1].weight&gt;HT[i].weight)</span><br><span class="line">				*s1 = i;</span><br><span class="line"></span><br><span class="line">	HT[*s1].parent = n+1;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(int i=1;i&lt;=n;i++)</span><br><span class="line">		<span class="keyword">if</span>(HT[i].parent == 0)</span><br><span class="line">		&#123;</span><br><span class="line">			*s2 = i; <span class="built_in">break</span>;</span><br><span class="line">		&#125;	</span><br><span class="line">	<span class="keyword">for</span>(int i=1;i&lt;=n;i++)</span><br><span class="line">		<span class="keyword">if</span>(HT[i].parent == 0)</span><br><span class="line">			<span class="keyword">if</span>(HT[*s2].weight&gt;HT[i].weight)</span><br><span class="line">				*s2 = i;</span><br><span class="line"></span><br><span class="line">		HT[*s2].parent = n+1;		</span><br><span class="line">&#125;</span><br><span class="line">void HuffmanCoding (HuffmanTree &amp;HT,HuffmanCode &amp;HC,int *w,int n)   //w存放n个字符的权值，构造哈夫曼树HT，求出哈夫曼编码HC</span><br><span class="line">&#123;</span><br><span class="line">  int i=1,m = n*2 - 1;  //总结点数</span><br><span class="line">  HuffmanTree p;</span><br><span class="line">  HT = (HuffmanTree)malloc((m+1)*sizeof(HTNode));  //0号单元未应用 </span><br><span class="line">  <span class="keyword">for</span>(p = HT,i;i&lt;=n;i++)</span><br><span class="line">  	*(++p) = &#123;w[i-1],0,0,0&#125;;</span><br><span class="line">  <span class="keyword">for</span>(i;i&lt;=m;i++) </span><br><span class="line">  	*(++p) = &#123;0,0,0,0&#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span>(i=n+1;i&lt;=m;i++)</span><br><span class="line">  &#123;</span><br><span class="line">  	int s1,s2;</span><br><span class="line">  	Selet(HT,i-1,&amp;s1,&amp;s2);            //在[1,i-1]选择parent = 0 且 weight 最小的两个节点，序号为 s1，s2 </span><br><span class="line">	HT[i].lchild = s1;</span><br><span class="line">	HT[i].rchild = s2;</span><br><span class="line">	HT[i].weight = HT[s1].weight + HT[s2].weight;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  //---从叶子节点到根逆向求每个字符的哈夫曼编码</span><br><span class="line">  HC = (HuffmanCode)malloc((n+1)*sizeof(char*));</span><br><span class="line">  </span><br><span class="line">  int f,c,j;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span>(int i=1;i&lt;=n;i++)</span><br><span class="line">  &#123;</span><br><span class="line">  	string s;</span><br><span class="line">  	<span class="keyword">for</span>(c = i ,f=HT[i].parent ; f!=0 ; c=f,f=HT[f].parent )</span><br><span class="line">  		<span class="keyword">if</span>(HT[f].lchild == c)</span><br><span class="line">  			s.insert(0,<span class="string">"0"</span>);</span><br><span class="line">  		<span class="keyword">else</span></span><br><span class="line">  			s.insert(0,<span class="string">"1"</span>);</span><br><span class="line">  </span><br><span class="line">  	HC[i] = (char *)malloc((s.length()+1)*sizeof(char));</span><br><span class="line">  	<span class="keyword">for</span>(j=0;j&lt;s.length();j++)</span><br><span class="line">  		HC[i][j] = s[j];</span><br><span class="line">  	HC[i][j] = <span class="string">'\n'</span>;</span><br><span class="line">  	</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  cout&lt;&lt;<span class="string">"number		weight		HuffmanCode"</span>&lt;&lt;endl;</span><br><span class="line">  <span class="keyword">for</span>(int i=1;i&lt;=n;i++)</span><br><span class="line">  &#123;</span><br><span class="line">  	cout&lt;&lt;i&lt;&lt;<span class="string">"		"</span>&lt;&lt;HT[i].weight&lt;&lt;<span class="string">"		"</span>;</span><br><span class="line">  	<span class="keyword">for</span>(int j=0;HC[i][j]!=<span class="string">'\n'</span>;j++)</span><br><span class="line">  	cout&lt;&lt;HC[i][j];</span><br><span class="line">  	cout&lt;&lt;endl;</span><br><span class="line">  &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/10/24/hello-world/" itemprop="url">
-              
-                <span itemprop="name">Welcome to My blog !</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-10-24T18:13:03+08:00"
-              content="2019-10-24" >
-          10-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag"># 数据结构</a>
+          
+            <a href="/tags/%E6%A0%91/" rel="tag"># 树</a>
+          
+            <a href="/tags/%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91/" rel="tag"># 哈夫曼树</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/10/30/%E5%9B%BE_%E5%8D%81%E5%AD%97%E9%93%BE%E8%A1%A8/" rel="next" title="图_十字链表">
+                <i class="fa fa-chevron-left"></i> 图_十字链表
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -492,6 +477,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -512,8 +501,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -587,6 +585,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简单树的存储方式"><span class="nav-text">简单树的存储方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义树的双亲表存储方式"><span class="nav-text">定义树的双亲表存储方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义树的孩子链表存储方式"><span class="nav-text">定义树的孩子链表存储方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义树的孩子兄弟表示法"><span class="nav-text">定义树的孩子兄弟表示法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#哈夫曼树"><span class="nav-text">哈夫曼树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#哈夫曼树的存储结构"><span class="nav-text">哈夫曼树的存储结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#求哈夫曼编码的算法"><span class="nav-text">求哈夫曼编码的算法</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -740,6 +754,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
