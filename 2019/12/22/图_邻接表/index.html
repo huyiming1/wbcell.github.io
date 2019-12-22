@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="数据结构,图_邻接表," />
 
 
 
@@ -79,13 +79,15 @@
 
 
 
-<meta name="description" content="爱学习的白细胞">
-<meta property="og:type" content="website">
-<meta property="og:title" content="WBCell的博客">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;tags&#x2F;test&#x2F;index.html">
+<meta name="description" content="这篇文章包含了有向图邻接表的定义以及创建，也包含了邻接表的深度优先遍历、广度优先遍历">
+<meta name="keywords" content="数据结构,图_邻接表">
+<meta property="og:type" content="article">
+<meta property="og:title" content="图_邻接表">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;22&#x2F;%E5%9B%BE_%E9%82%BB%E6%8E%A5%E8%A1%A8&#x2F;index.html">
 <meta property="og:site_name" content="WBCell的博客">
-<meta property="og:description" content="爱学习的白细胞">
+<meta property="og:description" content="这篇文章包含了有向图邻接表的定义以及创建，也包含了邻接表的深度优先遍历、广度优先遍历">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-12-20T11:24:24.459Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -116,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/test/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/12/22/图_邻接表/"/>
 
 
 
 
 
-  <title>Tag: test | WBCell的博客</title>
+  <title>图_邻接表 | WBCell的博客</title>
   
 
 
@@ -141,7 +143,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -269,54 +271,175 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>test<small>Tag</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/22/%E5%9B%BE_%E9%82%BB%E6%8E%A5%E8%A1%A8/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="白细胞">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar_WBCell.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WBCell的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/12/22/test/" itemprop="url">
-              
-                <span itemprop="name">test</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">图_邻接表</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-12-22T22:25:47+08:00"
-              content="2019-12-22" >
-          12-22
-        </time>
-      </div>
+        <div class="post-meta">
+           
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-22T22:30:07+08:00">
+                2019-12-22
+              </time>
+            
 
-    </header>
-  </article>
+            
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2019-12-20T19:24:24+08:00">
+                2019-12-20
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span id="busuanzi_value_page_pv"></span>次阅读
+          
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    </div>
+      
 
+      
+        <p>这篇文章包含了有向图邻接表的定义以及创建，也包含了邻接表的深度优先遍历、广度优先遍历</p>
+<a id="more"></a>
+
+<h2 id="邻接表初始化"><a href="#邻接表初始化" class="headerlink" title="邻接表初始化"></a>邻接表初始化</h2><h3 id="定义邻接表"><a href="#定义邻接表" class="headerlink" title="定义邻接表"></a>定义邻接表</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">struct ArcNode &#123;</span><br><span class="line">	int adjvex;</span><br><span class="line">	struct ArcNode* nextarc;</span><br><span class="line">	int *info;</span><br><span class="line">&#125;;</span><br><span class="line">struct VNode&#123;</span><br><span class="line">	int data;</span><br><span class="line">	ArcNode *firstarc;</span><br><span class="line">&#125;;</span><br><span class="line">struct ALGraph&#123;</span><br><span class="line">	VNode AdjList[MAX_VERTEX_NUM];</span><br><span class="line">	int vexnum,arcnum;</span><br><span class="line">	int kind;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="邻接表的创建"><a href="#邻接表的创建" class="headerlink" title="邻接表的创建"></a>邻接表的创建</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">int LocatVex(ALGraph &amp;g,int v)</span><br><span class="line">&#123;</span><br><span class="line">	int i;</span><br><span class="line">	<span class="keyword">for</span>(i=0;i&lt;g.vexnum;i++)</span><br><span class="line">		<span class="keyword">if</span>(g.AdjList[i].data==v)</span><br><span class="line">			<span class="built_in">break</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">return</span> i;</span><br><span class="line">&#125;</span><br><span class="line">void CreateALGraph(ALGraph &amp;g)</span><br><span class="line">&#123;</span><br><span class="line">	int vexnum,arcnum,v1,v2,j,k;</span><br><span class="line">	cin&gt;&gt;vexnum&gt;&gt;arcnum;</span><br><span class="line">	g.vexnum = vexnum;</span><br><span class="line">	g.arcnum = arcnum;</span><br><span class="line">	<span class="keyword">for</span>(int i=0;i&lt;vexnum;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		cin&gt;&gt;g.AdjList[i].data;      </span><br><span class="line">		g.AdjList[i].firstarc = NULL;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(int i=0;i&lt;arcnum;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		ArcNode *p;</span><br><span class="line">		p = new ArcNode;</span><br><span class="line">		cin&gt;&gt;v1&gt;&gt;v2;    		//输入弧两端顶点信息 </span><br><span class="line">		j = LocatVex(g,v1);</span><br><span class="line">		k = LocatVex(g,v2);</span><br><span class="line">		p-&gt;adjvex = k;</span><br><span class="line">		p-&gt;nextarc = g.AdjList[j].firstarc;</span><br><span class="line">		g.AdjList[j].firstarc = p;        //若要建立无向图重复以上三行代码将j，k互换即可</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="遍历算法"><a href="#遍历算法" class="headerlink" title="遍历算法"></a>遍历算法</h2><h3 id="深度优先遍历"><a href="#深度优先遍历" class="headerlink" title="深度优先遍历"></a>深度优先遍历</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">bool visited[100];</span><br><span class="line">void DFS (ALGraph &amp;g,int &amp;v)</span><br><span class="line">&#123;</span><br><span class="line">	visited[v] = <span class="literal">true</span>;</span><br><span class="line">	cout&lt;&lt;g.AdjList[v].data;</span><br><span class="line">	ArcNode *p = g.AdjList[v].firstarc;</span><br><span class="line">	<span class="keyword">while</span>(p)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(!visited[p-&gt;adjvex])</span><br><span class="line">			DFS(g,p-&gt;adjvex);</span><br><span class="line">		p = p-&gt;nextarc;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void DFSTraverse(ALGraph &amp;g)</span><br><span class="line">&#123;</span><br><span class="line">	int v;</span><br><span class="line">	<span class="keyword">for</span>(v=0;v&lt;g.vexnum;v++)</span><br><span class="line">		visited[v] = <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">for</span>(v=0;v&lt;g.vexnum;v++)</span><br><span class="line">		<span class="keyword">if</span>(!visited[v])</span><br><span class="line">			DFS(g,v);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="广度优先遍历"><a href="#广度优先遍历" class="headerlink" title="广度优先遍历"></a>广度优先遍历</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">void BFSTraverse(ALGraph &amp;g)</span><br><span class="line">&#123;</span><br><span class="line">	int v=0,HeadQueue,headnum;</span><br><span class="line">	std::queue&lt;int&gt; q;</span><br><span class="line">	ArcNode *BFStemp;</span><br><span class="line">	<span class="keyword">for</span>(int i=0;i&lt;g.vexnum;i++)</span><br><span class="line">		visited[i] = <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">for</span>(v;v&lt;g.vexnum;v++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(!visited[v])</span><br><span class="line">		&#123;</span><br><span class="line">			visited[v] = <span class="literal">true</span>;</span><br><span class="line">			cout&lt;&lt;g.AdjList[v].data;</span><br><span class="line">			q.push(g.AdjList[v].data);</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">while</span>(!q.empty())</span><br><span class="line">			&#123;</span><br><span class="line">				HeadQueue = q.front();</span><br><span class="line">				q.pop();</span><br><span class="line">				<span class="keyword">for</span>(int i=0;i&lt;g.arcnum;i++)</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="keyword">if</span>(g.AdjList[i].data == HeadQueue)</span><br><span class="line">						headnum = i;</span><br><span class="line">				&#125;</span><br><span class="line">				BFStemp = g.AdjList[headnum].firstarc;</span><br><span class="line">				<span class="keyword">while</span>(BFStemp)</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="keyword">if</span>(!visited[BFStemp-&gt;adjvex])</span><br><span class="line">					&#123;</span><br><span class="line">						visited[BFStemp-&gt;adjvex] = <span class="literal">true</span>;</span><br><span class="line">						cout&lt;&lt;g.AdjList[BFStemp-&gt;adjvex].data;</span><br><span class="line">						q.push(g.AdjList[BFStemp-&gt;adjvex].data);</span><br><span class="line">					&#125;</span><br><span class="line">					BFStemp = BFStemp-&gt;nextarc;</span><br><span class="line">				&#125;		</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag"># 数据结构</a>
+          
+            <a href="/tags/%E5%9B%BE-%E9%82%BB%E6%8E%A5%E8%A1%A8/" rel="tag"># 图_邻接表</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/12/22/%E6%A0%91%E7%9A%84%E5%AD%98%E5%82%A8/" rel="next" title="树的存储">
+                <i class="fa fa-chevron-left"></i> 树的存储
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/12/22/%E5%9B%BE_%E5%8D%81%E5%AD%97%E9%93%BE%E8%A1%A8/" rel="prev" title="图_十字链表">
+                图_十字链表 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -324,6 +447,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -344,8 +471,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -364,12 +500,21 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
             
 
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
             
 
             
@@ -377,7 +522,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -416,6 +561,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#邻接表初始化"><span class="nav-text">邻接表初始化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义邻接表"><span class="nav-text">定义邻接表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#邻接表的创建"><span class="nav-text">邻接表的创建</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遍历算法"><span class="nav-text">遍历算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#深度优先遍历"><span class="nav-text">深度优先遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#广度优先遍历"><span class="nav-text">广度优先遍历</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -569,6 +730,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
