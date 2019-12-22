@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="WBCell的博客">
 <meta property="og:description" content="这篇文章包含了有向图十字链表的定义以及创建，也包含了邻接表的深度优先遍历、广度优先遍历，十字链表是基于邻接表的一种存储图的一种结构，其方法和邻接表大同小异">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-30T07:49:19.324Z">
+<meta property="og:updated_time" content="2019-12-20T11:21:57.748Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -396,47 +396,7 @@
 <h2 id="十字链表表初始化"><a href="#十字链表表初始化" class="headerlink" title="十字链表表初始化"></a>十字链表表初始化</h2><h3 id="定义十字链表"><a href="#定义十字链表" class="headerlink" title="定义十字链表"></a>定义十字链表</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">struct ArcBox &#123;</span><br><span class="line">	int tailvex,headvex;</span><br><span class="line">	struct ArcBox *hiink,*tlink;</span><br><span class="line">	int *info;</span><br><span class="line">&#125;;</span><br><span class="line">struct VexNode&#123;</span><br><span class="line">	int data;</span><br><span class="line">	ArcBox *firstin,*firstout;</span><br><span class="line">&#125;;</span><br><span class="line">struct OLGraph&#123;</span><br><span class="line">	VexNode xlist[MAX_VERTEX_NUM];</span><br><span class="line">	int vexnum,arcnum;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <h3 id="邻接表的创建"><a href="#邻接表的创建" class="headerlink" title="邻接表的创建"></a>邻接表的创建</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">int LocatVex(OLGraph &amp;g,int v)</span><br><span class="line">&#123;</span><br><span class="line">	int i;</span><br><span class="line">	<span class="keyword">for</span>(i=0;i&lt;g.vexnum;i++)</span><br><span class="line">		<span class="keyword">if</span>(g.xlist[i].data==v)</span><br><span class="line">			<span class="built_in">break</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">return</span> i;</span><br><span class="line">&#125;</span><br><span class="line">void CreateDG(OLGraph &amp;g)</span><br><span class="line">&#123;</span><br><span class="line">	int v1,v2,i,j,IncInfo;</span><br><span class="line">	ArcBox *p;</span><br><span class="line">	cin&gt;&gt;g.vexnum&gt;&gt;g.arcnum&gt;&gt;IncInfo;  //IncInfo为零则各顶点不包含其他信息</span><br><span class="line">	<span class="keyword">for</span>(i=0;i&lt;g.vexnum;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		cin&gt;&gt;g.xlist[i].data;</span><br><span class="line">		g.xlist[i].firstin = NULL;</span><br><span class="line">		g.xlist[i].firstout = NULL;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(int k=0;k&lt;g.arcnum;k++)</span><br><span class="line">	&#123;</span><br><span class="line">		cin&gt;&gt;v1&gt;&gt;v2;</span><br><span class="line">		i = LocatVex(g,v1);</span><br><span class="line">		j = LocatVex(g,v2);</span><br><span class="line">		p = new ArcBox;</span><br><span class="line">		*p = &#123; i, j, g.xlist[j].firstin, g.xlist[i].firstout, NULL&#125;;</span><br><span class="line">		g.xlist[j].firstin = g.xlist[i].firstout = p;</span><br><span class="line">		<span class="keyword">if</span>(IncInfo) cin&gt;&gt;*p-&gt;info;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="遍历算法"><a href="#遍历算法" class="headerlink" title="遍历算法"></a>遍历算法</h2><h3 id="深度优先遍历"><a href="#深度优先遍历" class="headerlink" title="深度优先遍历"></a>深度优先遍历</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">bool visited[100];</span><br><span class="line">void DFS (OLGraph &amp;g,int &amp;v)</span><br><span class="line">&#123;</span><br><span class="line">	visited[v] = <span class="literal">true</span>;</span><br><span class="line">	cout&lt;&lt;g.xlist[v].data;</span><br><span class="line">	ArcBox *p = g.xlist[v].firstout;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>(p)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(!visited[p-&gt;headvex])</span><br><span class="line">			DFS(g,p-&gt;headvex);</span><br><span class="line">		p = p-&gt;tlink; </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">void DFSTraverse(OLGraph &amp;g)</span><br><span class="line">&#123;</span><br><span class="line">	int v;</span><br><span class="line">	<span class="keyword">for</span>(v=0;v&lt;g.vexnum;v++) </span><br><span class="line">		visited[v] = <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">for</span>(v=0;v&lt;g.vexnum;v++) </span><br><span class="line">		<span class="keyword">if</span>(!visited[v])</span><br><span class="line">			DFS(g,v);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="广度优先遍历"><a href="#广度优先遍历" class="headerlink" title="广度优先遍历"></a>广度优先遍历</h3><pre><code class="bash">void BFSTraverse(OLGraph &amp;g)
-{
-    int v=0,HeadQueue,headnum;
-    std::queue&lt;int&gt; q;
-    ArcBox *BFStemp;
-
-    <span class="keyword">for</span>(int i=0;i&lt;g.vexnum;i++)
-    visited[i]=<span class="literal">false</span>;
-
-    <span class="keyword">for</span>(int i=0;i&lt;g.vexnum;i++)
-    {
-        <span class="keyword">if</span>(!visited[i])
-        {
-            cout&lt;&lt;g.xlist[i].data;
-            q.push(g.xlist[i].data);
-            <span class="keyword">while</span> (!q.empty()) 
-            {
-                HeadQueue = q.front();
-                q.pop();                               //出队
-
-                <span class="keyword">for</span> (int j = 0; j &lt; g.vexnum; j++) 
-                {
-                    <span class="keyword">if</span> (g.xlist[j].data == HeadQueue)
-                        headnum = j;                   //获取队头位置
-                }
-                BFStemp = g.xlist[headnum].firstout;                    //用BFStemp来存储该节点的第一个出去的弧
-
-                <span class="keyword">while</span> (BFStemp) {
-                    <span class="keyword">if</span> (!visited[BFStemp-&gt;headvex]) {
-                        visited[BFStemp-&gt;headvex] = <span class="literal">true</span>;             //把结点都标记为真
-                        cout&lt;&lt;g.xlist[BFStemp-&gt;headvex].data; //访问元素
-                        q.push(g.xlist[BFStemp-&gt;headvex].data);     //把访问的元素都入队
-                    }
-                    BFStemp = BFStemp-&gt;tlink;
-                }
-            }
-        }
-
-    }    
-}</code></pre>
-
+<h3 id="广度优先遍历"><a href="#广度优先遍历" class="headerlink" title="广度优先遍历"></a>广度优先遍历</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">void BFSTraverse(OLGraph &amp;g)</span><br><span class="line">&#123;</span><br><span class="line">	int v=0,HeadQueue,headnum;</span><br><span class="line">	std::queue&lt;int&gt; q;</span><br><span class="line">	ArcBox *BFStemp;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(int i=0;i&lt;g.vexnum;i++)</span><br><span class="line">	visited[i]=<span class="literal">false</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(int i=0;i&lt;g.vexnum;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(!visited[i])</span><br><span class="line">		&#123;</span><br><span class="line">			cout&lt;&lt;g.xlist[i].data;</span><br><span class="line">			q.push(g.xlist[i].data);</span><br><span class="line">			<span class="keyword">while</span> (!q.empty()) </span><br><span class="line">			&#123;</span><br><span class="line">				HeadQueue = q.front();</span><br><span class="line">				q.pop();                               //出队</span><br><span class="line"></span><br><span class="line">                <span class="keyword">for</span> (int j = 0; j &lt; g.vexnum; j++) </span><br><span class="line">				&#123;</span><br><span class="line">                    <span class="keyword">if</span> (g.xlist[j].data == HeadQueue)</span><br><span class="line">                        headnum = j;                   //获取队头位置</span><br><span class="line">                &#125;</span><br><span class="line">                BFStemp = g.xlist[headnum].firstout;                    //用BFStemp来存储该节点的第一个出去的弧</span><br><span class="line"></span><br><span class="line">                <span class="keyword">while</span> (BFStemp) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (!visited[BFStemp-&gt;headvex]) &#123;</span><br><span class="line">                        visited[BFStemp-&gt;headvex] = <span class="literal">true</span>;             //把结点都标记为真</span><br><span class="line">                        cout&lt;&lt;g.xlist[BFStemp-&gt;headvex].data; //访问元素</span><br><span class="line">                        q.push(g.xlist[BFStemp-&gt;headvex].data);     //把访问的元素都入队</span><br><span class="line">                    &#125;</span><br><span class="line">                    BFStemp = BFStemp-&gt;tlink;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">	&#125;	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -561,7 +521,7 @@
               
                 <a href="/archives/index.html%7C%7Carchive">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -572,7 +532,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -583,7 +543,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

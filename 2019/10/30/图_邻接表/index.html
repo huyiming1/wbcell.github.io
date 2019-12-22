@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="WBCell的博客">
 <meta property="og:description" content="这篇文章包含了有向图邻接表的定义以及创建，也包含了邻接表的深度优先遍历、广度优先遍历">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-30T07:47:23.808Z">
+<meta property="og:updated_time" content="2019-12-20T11:24:24.459Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -396,47 +396,7 @@
 <h2 id="邻接表初始化"><a href="#邻接表初始化" class="headerlink" title="邻接表初始化"></a>邻接表初始化</h2><h3 id="定义邻接表"><a href="#定义邻接表" class="headerlink" title="定义邻接表"></a>定义邻接表</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">struct ArcNode &#123;</span><br><span class="line">	int adjvex;</span><br><span class="line">	struct ArcNode* nextarc;</span><br><span class="line">	int *info;</span><br><span class="line">&#125;;</span><br><span class="line">struct VNode&#123;</span><br><span class="line">	int data;</span><br><span class="line">	ArcNode *firstarc;</span><br><span class="line">&#125;;</span><br><span class="line">struct ALGraph&#123;</span><br><span class="line">	VNode AdjList[MAX_VERTEX_NUM];</span><br><span class="line">	int vexnum,arcnum;</span><br><span class="line">	int kind;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <h3 id="邻接表的创建"><a href="#邻接表的创建" class="headerlink" title="邻接表的创建"></a>邻接表的创建</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">int LocatVex(ALGraph &amp;g,int v)</span><br><span class="line">&#123;</span><br><span class="line">	int i;</span><br><span class="line">	<span class="keyword">for</span>(i=0;i&lt;g.vexnum;i++)</span><br><span class="line">		<span class="keyword">if</span>(g.AdjList[i].data==v)</span><br><span class="line">			<span class="built_in">break</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">return</span> i;</span><br><span class="line">&#125;</span><br><span class="line">void CreateALGraph(ALGraph &amp;g)</span><br><span class="line">&#123;</span><br><span class="line">	int vexnum,arcnum,v1,v2,j,k;</span><br><span class="line">	cin&gt;&gt;vexnum&gt;&gt;arcnum;</span><br><span class="line">	g.vexnum = vexnum;</span><br><span class="line">	g.arcnum = arcnum;</span><br><span class="line">	<span class="keyword">for</span>(int i=0;i&lt;vexnum;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		cin&gt;&gt;g.AdjList[i].data;      </span><br><span class="line">		g.AdjList[i].firstarc = NULL;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(int i=0;i&lt;arcnum;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		ArcNode *p;</span><br><span class="line">		p = new ArcNode;</span><br><span class="line">		cin&gt;&gt;v1&gt;&gt;v2;    		//输入弧两端顶点信息 </span><br><span class="line">		j = LocatVex(g,v1);</span><br><span class="line">		k = LocatVex(g,v2);</span><br><span class="line">		p-&gt;adjvex = k;</span><br><span class="line">		p-&gt;nextarc = g.AdjList[j].firstarc;</span><br><span class="line">		g.AdjList[j].firstarc = p;        //若要建立无向图重复以上三行代码将j，k互换即可</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="遍历算法"><a href="#遍历算法" class="headerlink" title="遍历算法"></a>遍历算法</h2><h3 id="深度优先遍历"><a href="#深度优先遍历" class="headerlink" title="深度优先遍历"></a>深度优先遍历</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">bool visited[100];</span><br><span class="line">void DFS (ALGraph &amp;g,int &amp;v)</span><br><span class="line">&#123;</span><br><span class="line">	visited[v] = <span class="literal">true</span>;</span><br><span class="line">	cout&lt;&lt;g.AdjList[v].data;</span><br><span class="line">	ArcNode *p = g.AdjList[v].firstarc;</span><br><span class="line">	<span class="keyword">while</span>(p)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(!visited[p-&gt;adjvex])</span><br><span class="line">			DFS(g,p-&gt;adjvex);</span><br><span class="line">		p = p-&gt;nextarc;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void DFSTraverse(ALGraph &amp;g)</span><br><span class="line">&#123;</span><br><span class="line">	int v;</span><br><span class="line">	<span class="keyword">for</span>(v=0;v&lt;g.vexnum;v++)</span><br><span class="line">		visited[v] = <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">for</span>(v=0;v&lt;g.vexnum;v++)</span><br><span class="line">		<span class="keyword">if</span>(!visited[v])</span><br><span class="line">			DFS(g,v);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="广度优先遍历"><a href="#广度优先遍历" class="headerlink" title="广度优先遍历"></a>广度优先遍历</h3><pre><code class="bash">void BFSTraverse(ALGraph &amp;g)
-{
-    int v=0,HeadQueue,headnum;
-    std::queue&lt;int&gt; q;
-    ArcNode *BFStemp;
-    <span class="keyword">for</span>(int i=0;i&lt;g.vexnum;i++)
-        visited[i] = <span class="literal">false</span>;
-    <span class="keyword">for</span>(v;v&lt;g.vexnum;v++)
-    {
-        <span class="keyword">if</span>(!visited[v])
-        {
-            visited[v] = <span class="literal">true</span>;
-            cout&lt;&lt;g.AdjList[v].data;
-            q.push(g.AdjList[v].data);
-
-            <span class="keyword">while</span>(!q.empty())
-            {
-                HeadQueue = q.front();
-                q.pop();
-                <span class="keyword">for</span>(int i=0;i&lt;g.arcnum;i++)
-                {
-                    <span class="keyword">if</span>(g.AdjList[i].data == HeadQueue)
-                        headnum = i;
-                }
-                BFStemp = g.AdjList[headnum].firstarc;
-                <span class="keyword">while</span>(BFStemp)
-                {
-                    <span class="keyword">if</span>(!visited[BFStemp-&gt;adjvex])
-                    {
-                        visited[BFStemp-&gt;adjvex] = <span class="literal">true</span>;
-                        cout&lt;&lt;g.AdjList[BFStemp-&gt;adjvex].data;
-                        q.push(g.AdjList[BFStemp-&gt;adjvex].data);
-                    }
-                    BFStemp = BFStemp-&gt;nextarc;
-                }
-
-            }
-        }
-    }
-}</code></pre>
-
+<h3 id="广度优先遍历"><a href="#广度优先遍历" class="headerlink" title="广度优先遍历"></a>广度优先遍历</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">void BFSTraverse(ALGraph &amp;g)</span><br><span class="line">&#123;</span><br><span class="line">	int v=0,HeadQueue,headnum;</span><br><span class="line">	std::queue&lt;int&gt; q;</span><br><span class="line">	ArcNode *BFStemp;</span><br><span class="line">	<span class="keyword">for</span>(int i=0;i&lt;g.vexnum;i++)</span><br><span class="line">		visited[i] = <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">for</span>(v;v&lt;g.vexnum;v++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(!visited[v])</span><br><span class="line">		&#123;</span><br><span class="line">			visited[v] = <span class="literal">true</span>;</span><br><span class="line">			cout&lt;&lt;g.AdjList[v].data;</span><br><span class="line">			q.push(g.AdjList[v].data);</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">while</span>(!q.empty())</span><br><span class="line">			&#123;</span><br><span class="line">				HeadQueue = q.front();</span><br><span class="line">				q.pop();</span><br><span class="line">				<span class="keyword">for</span>(int i=0;i&lt;g.arcnum;i++)</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="keyword">if</span>(g.AdjList[i].data == HeadQueue)</span><br><span class="line">						headnum = i;</span><br><span class="line">				&#125;</span><br><span class="line">				BFStemp = g.AdjList[headnum].firstarc;</span><br><span class="line">				<span class="keyword">while</span>(BFStemp)</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="keyword">if</span>(!visited[BFStemp-&gt;adjvex])</span><br><span class="line">					&#123;</span><br><span class="line">						visited[BFStemp-&gt;adjvex] = <span class="literal">true</span>;</span><br><span class="line">						cout&lt;&lt;g.AdjList[BFStemp-&gt;adjvex].data;</span><br><span class="line">						q.push(g.AdjList[BFStemp-&gt;adjvex].data);</span><br><span class="line">					&#125;</span><br><span class="line">					BFStemp = BFStemp-&gt;nextarc;</span><br><span class="line">				&#125;		</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -561,7 +521,7 @@
               
                 <a href="/archives/index.html%7C%7Carchive">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -572,7 +532,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -583,7 +543,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

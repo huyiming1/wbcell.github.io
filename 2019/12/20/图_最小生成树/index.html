@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="数据结构,最小生成树," />
 
 
 
@@ -79,13 +79,15 @@
 
 
 
-<meta name="description" content="爱学习的白细胞">
-<meta property="og:type" content="website">
-<meta property="og:title" content="WBCell的博客">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;index.html">
+<meta name="description" content="这篇文章以图的数组（邻接矩阵）储存表示，运用Prim算法来求图的最小生成树">
+<meta name="keywords" content="数据结构,最小生成树">
+<meta property="og:type" content="article">
+<meta property="og:title" content="图_最小生成树">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;20&#x2F;%E5%9B%BE_%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91&#x2F;index.html">
 <meta property="og:site_name" content="WBCell的博客">
-<meta property="og:description" content="爱学习的白细胞">
+<meta property="og:description" content="这篇文章以图的数组（邻接矩阵）储存表示，运用Prim算法来求图的最小生成树">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-12-22T02:17:59.305Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -116,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/12/20/图_最小生成树/"/>
 
 
 
 
 
-  <title>WBCell的博客</title>
+  <title>图_最小生成树 | WBCell的博客</title>
   
 
 
@@ -141,8 +143,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -269,9 +270,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -301,9 +302,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/12/20/%E5%9B%BE_%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/" itemprop="url">图_最小生成树</a></h1>
+          <h1 class="post-title" itemprop="name headline">图_最小生成树</h1>
         
 
         <div class="post-meta">
@@ -371,782 +370,8 @@
           
 
           
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>这篇文章以图的数组（邻接矩阵）储存表示，运用Prim算法来求图的最小生成树</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/12/20/%E5%9B%BE_%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/18/%E6%A0%91%E7%9A%84%E5%AD%98%E5%82%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="白细胞">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar_WBCell.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="WBCell的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/12/18/%E6%A0%91%E7%9A%84%E5%AD%98%E5%82%A8/" itemprop="url">树的存储</a></h1>
-        
-
-        <div class="post-meta">
-           
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-18T20:41:14+08:00">
-                2019-12-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index">
-                    <span itemprop="name">数据结构</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91/" itemprop="url" rel="index">
-                    <span itemprop="name">树</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91/%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91/" itemprop="url" rel="index">
-                    <span itemprop="name">哈夫曼树</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>这篇文章包含了简单树的多种存储方式，以及哈夫曼树和求哈夫曼编码的算法</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/12/18/%E6%A0%91%E7%9A%84%E5%AD%98%E5%82%A8/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/30/%E5%9B%BE_%E5%8D%81%E5%AD%97%E9%93%BE%E8%A1%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="白细胞">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar_WBCell.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="WBCell的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/30/%E5%9B%BE_%E5%8D%81%E5%AD%97%E9%93%BE%E8%A1%A8/" itemprop="url">图_十字链表</a></h1>
-        
-
-        <div class="post-meta">
-           
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-30T15:40:14+08:00">
-                2019-10-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index">
-                    <span itemprop="name">数据结构</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%9B%BE-%E5%8D%81%E5%AD%97%E9%93%BE%E8%A1%A8/" itemprop="url" rel="index">
-                    <span itemprop="name">图_十字链表</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>这篇文章包含了有向图十字链表的定义以及创建，也包含了邻接表的深度优先遍历、广度优先遍历，十字链表是基于邻接表的一种存储图的一种结构，其方法和邻接表大同小异</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/10/30/%E5%9B%BE_%E5%8D%81%E5%AD%97%E9%93%BE%E8%A1%A8/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/30/%E5%9B%BE_%E9%82%BB%E6%8E%A5%E8%A1%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="白细胞">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar_WBCell.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="WBCell的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/30/%E5%9B%BE_%E9%82%BB%E6%8E%A5%E8%A1%A8/" itemprop="url">图_邻接表</a></h1>
-        
-
-        <div class="post-meta">
-           
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-30T15:27:55+08:00">
-                2019-10-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index">
-                    <span itemprop="name">数据结构</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%9B%BE-%E9%82%BB%E6%8E%A5%E8%A1%A8/" itemprop="url" rel="index">
-                    <span itemprop="name">图_邻接表</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>这篇文章包含了有向图邻接表的定义以及创建，也包含了邻接表的深度优先遍历、广度优先遍历</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/10/30/%E5%9B%BE_%E9%82%BB%E6%8E%A5%E8%A1%A8/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/24/%E7%AE%80%E5%8D%95%E4%BA%8C%E5%8F%89%E6%A0%91/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="白细胞">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar_WBCell.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="WBCell的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/24/%E7%AE%80%E5%8D%95%E4%BA%8C%E5%8F%89%E6%A0%91/" itemprop="url">简单二叉树</a></h1>
-        
-
-        <div class="post-meta">
-           
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-24T20:50:44+08:00">
-                2019-10-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index">
-                    <span itemprop="name">数据结构</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E4%BA%8C%E5%8F%89%E6%A0%91/" itemprop="url" rel="index">
-                    <span itemprop="name">二叉树</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>这篇文章包含了简单二叉树的定义以及创建，也包含了二叉树的先序、中序、后序遍历的递归算法，还包含了使用队列对二叉树层序遍历的非递归算法</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/10/24/%E7%AE%80%E5%8D%95%E4%BA%8C%E5%8F%89%E6%A0%91/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/24/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="白细胞">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar_WBCell.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="WBCell的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/24/hello-world/" itemprop="url">Welcome to My blog !</a></h1>
-        
-
-        <div class="post-meta">
-           
-            <i class="fa fa-thumb-tack"></i>
-            <font color=7D26CD>置顶</font>
             <span class="post-meta-divider">|</span>
-          
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-24T18:13:03+08:00">
-                2019-10-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
+            <span id="busuanzi_value_page_pv"></span>次阅读
           
           
 
@@ -1165,16 +390,14 @@
       
 
       
-        
-          <p>欢迎参观我的WBCell（white blood cell）博客，可通过菜单中标签、分类、搜索等功能进行查找自己想要的内容。由于此博客才刚刚搭建，里面文章不多，网站功能也待完善。但是WBCell会不断学习，丰富博客内容并持续更新，后面会在网站中加入评论功能，方便大家学习交流。若发现文章中有错误或者可以改进的地方欢迎指出。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/10/24/hello-world/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <p>这篇文章以图的数组（邻接矩阵）储存表示，运用Prim算法来求图的最小生成树</p>
+<a id="more"></a>
+
+<h2 id="图-邻接矩阵初始化"><a href="#图-邻接矩阵初始化" class="headerlink" title="图_邻接矩阵初始化"></a>图_邻接矩阵初始化</h2><h3 id="定义图-邻接矩阵存储"><a href="#定义图-邻接矩阵存储" class="headerlink" title="定义图_邻接矩阵存储"></a>定义图_邻接矩阵存储</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">typedef struct &#123;</span><br><span class="line">	char vexs[MAX_NUM];</span><br><span class="line">	int arcs[MAX_NUM][MAX_NUM];</span><br><span class="line">	int vexnum,arcnum;</span><br><span class="line">&#125;MGraph;</span><br></pre></td></tr></table></figure>
+<h2 id="Prim算法求最小生成树"><a href="#Prim算法求最小生成树" class="headerlink" title="Prim算法求最小生成树"></a>Prim算法求最小生成树</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># define MAX_NUM 20</span></span><br><span class="line">typedef struct &#123;</span><br><span class="line">	char adjvex;</span><br><span class="line">	int  lowcost;</span><br><span class="line">&#125;Closedge;            //记录从顶点集 U 到 V-U 的代价最小的边的辅助数组定义</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">int LocateVex (MGraph G, char u)   //返回结点 U 的位置</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">for</span>(int i=0;i&lt;G.vexnum;i++)</span><br><span class="line">		<span class="keyword">if</span>(u == G.vexs[i])</span><br><span class="line">		<span class="built_in">return</span> i;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">int minimun (Closedge closedge[],MGraph G)  //返回辅助数组记录最小值的下标</span><br><span class="line">&#123;</span><br><span class="line">	int min = INT_MAX,j=INT_MAX;</span><br><span class="line">	<span class="keyword">for</span>(int i=0;i&lt;G.vexnum;i++)</span><br><span class="line">		<span class="keyword">if</span>(min&gt;closedge[i].lowcost &amp;&amp; closedge[i].lowcost!=0)</span><br><span class="line">		&#123;</span><br><span class="line">			min = closedge[i].lowcost;</span><br><span class="line">			j=i;</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="built_in">return</span> j;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">void MiniSpan_Prim (MGraph G, char u)</span><br><span class="line">&#123;</span><br><span class="line">	Closedge closedge[MAX_NUM];</span><br><span class="line">	int k;</span><br><span class="line">	k = LocateVex (G,u);</span><br><span class="line">	<span class="keyword">for</span>(int i=0;i&lt;G.vexnum;i++)         //初始化辅助数组</span><br><span class="line">		<span class="keyword">if</span>(i!=k)</span><br><span class="line">			closedge[i] = &#123;u , G.arcs[k][i]&#125;;</span><br><span class="line">	closedge[k].lowcost = 0;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span>(int i=0;i&lt;G.vexnum;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		k = minimun(closedge,G);</span><br><span class="line">		cout&lt;&lt;closedge[k].adjvex&lt;&lt;<span class="string">"---"</span>&lt;&lt;G.vexs[k]&lt;&lt;endl;   //输出生成树的边</span><br><span class="line">		closedge[k].lowcost = 0;                      //第 K 个顶点并入 U 集</span><br><span class="line">		<span class="keyword">for</span>(int j=0;j&lt;G.vexnum;j++)         //重新选择最小边</span><br><span class="line">			<span class="keyword">if</span>(G.arcs[k][j]&lt;closedge[j].lowcost)</span><br><span class="line">				closedge[j] = &#123;G.vexs[k], G.arcs[k][j]&#125;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -1189,14 +412,38 @@
 
     <footer class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag"># 数据结构</a>
+          
+            <a href="/tags/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/" rel="tag"># 最小生成树</a>
+          
+        </div>
       
 
       
+      
+      
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/12/18/%E6%A0%91%E7%9A%84%E5%AD%98%E5%82%A8/" rel="next" title="树的存储">
+                <i class="fa fa-chevron-left"></i> 树的存储
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
-        <div class="post-eof"></div>
+
+      
       
     </footer>
   </div>
@@ -1206,10 +453,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -1217,6 +465,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -1237,8 +489,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1318,6 +579,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#图-邻接矩阵初始化"><span class="nav-text">图_邻接矩阵初始化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义图-邻接矩阵存储"><span class="nav-text">定义图_邻接矩阵存储</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Prim算法求最小生成树"><span class="nav-text">Prim算法求最小生成树</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1471,6 +748,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
